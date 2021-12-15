@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
@@ -9,10 +10,10 @@ $dotenv->load();
 $client = new Client();
 
 try {
-$response = $client->request(
-    'GET',
-    'https://httpbin.org/status/503'
-);
+    $response = $client->request(
+        'GET',
+        'https://httpbin.org/status/503'
+    );
     var_dump($response);
 } catch (\GuzzleHttp\Exception\ClientException $e) {
     echo $e->getCode().'<br>';
@@ -21,5 +22,3 @@ $response = $client->request(
     echo $e->getCode() . '<br>';
     echo $e->getMessage() . '<br>';
 }
-
-

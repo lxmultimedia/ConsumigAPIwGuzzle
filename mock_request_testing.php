@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -21,8 +22,8 @@ $client->get('https://jsonplaceholder.typicode.com/posts/0', ['http_errors' => f
 
 echo count($bucket).'<br>';
 
-foreach ($bucket as $item){
+foreach ($bucket as $item) {
     echo $item['request']->getUri().'<br>';
     echo $item['response']->getBody().'<br>'
-;}
-
+;
+}

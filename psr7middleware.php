@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -6,8 +7,10 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Client;
 
-class JsonPlaceholderPost {
-    public function __construct($jsonString) {
+class JsonPlaceholderPost
+{
+    public function __construct($jsonString)
+    {
         $decodedJsonString = json_decode($jsonString);
         $this->id = $decodedJsonString->id;
         $this->userId = $decodedJsonString->userId;
@@ -16,7 +19,8 @@ class JsonPlaceholderPost {
         unset($decodedJsonString);
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         $string = "id: {$this->id}\r\n";
         $string .= "userId: {$this->userId}\r\n";
         $string .= "title: {$this->title}\r\n";

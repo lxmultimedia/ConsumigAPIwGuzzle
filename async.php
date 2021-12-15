@@ -22,7 +22,9 @@ $promise = $client->getAsync(
 $promise->then(
     function (Response $response) {
         echo $response->getBody();
-    }, function (RequestException $re) {
-    echo $re->getMessage();
-});
+    },
+    function (RequestException $re) {
+        echo $re->getMessage();
+    }
+);
 $response = $promise->wait();

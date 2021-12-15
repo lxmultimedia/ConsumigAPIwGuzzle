@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -16,8 +17,8 @@ $mock = new MockHandler([
 $handler = HandlerStack::create($mock);
 $client = new Client(['handler' => $handler]);
 
-echo $client->request('GET', '/' )->getStatusCode().'<br>';
+echo $client->request('GET', '/')->getStatusCode().'<br>';
 echo '<pre>';
 print_r($client->request('GET', '/')->getHeader('X-Foo'));
 echo '</pre>';
-echo $client->request('GET', '/' )->getStatusCode().'<br>';
+echo $client->request('GET', '/')->getStatusCode().'<br>';

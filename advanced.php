@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
@@ -11,7 +12,7 @@ $response = $client->request(
     'GET',
     'https://httpbin.org/drip?numbytes=1000&duration=5',
     [
-        'progress' => function(
+        'progress' => function (
             $downloadTotal,
             $downloadedBytes,
             $uploadTotal,
@@ -78,8 +79,7 @@ echo "\r\n==== HTTP Errors - TRUE ===\r\n";
 try {
     $response = $client->request(
         'GET',
-        'https://jsonplaceholder.typicode.com/comments/0'
-        ,
+        'https://jsonplaceholder.typicode.com/comments/0',
         [
             'http_errors' => true,
         ]
@@ -114,6 +114,8 @@ echo var_dump($cookiesJar->toArray());
 echo "\r\n==== HTTP Basic Auth ===\r\n";
 $response = $client->request(
     'GET',
+
+
     'https://httpbin.org/basic-auth/user/passwd',
     [
         'auth' => ['user', 'passwd'],

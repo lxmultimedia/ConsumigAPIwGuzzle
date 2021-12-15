@@ -1,4 +1,5 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
@@ -21,7 +22,7 @@ foreach ($headers as $name => $value) {
 
 $type = $response->getHeaders('Content-Type');
 
-if(in_array('application/json; charset=utf-8', $type['Content-Type'])) {
+if (in_array('application/json; charset=utf-8', $type['Content-Type'])) {
     $body = json_decode($response->getBody());
 } else {
     $body = $response->getBody();
